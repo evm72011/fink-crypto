@@ -6,7 +6,7 @@
 namespace fink::orderbook {
 
 OrderBook::OrderBook(fink::core::Symbol symbol)
-    : symbol_(std::move(symbol)) {
+    : symbol_(std::move(symbol)), bids_(), asks_() {
 }
 
 std::expected<void, ApplyError> OrderBook::apply(const fink::market::BookSnapshot& snapshot) {

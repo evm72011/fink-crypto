@@ -17,7 +17,7 @@ namespace fink::orderbook {
 
 class OrderBook {
 public:
-    OrderBook() = default;
+    OrderBook() : symbol_(), bids_(), asks_() { }
     explicit OrderBook(fink::core::Symbol symbol);
 
     [[nodiscard]] std::expected<void, ApplyError> apply(const fink::market::BookSnapshot& snapshot);

@@ -9,7 +9,7 @@ add_executable(
 target_link_libraries(${TEST_NAME} PRIVATE ${LIB_NAME} GTest::gtest
                                            GTest::gtest_main)
 
-#add_sanitizer_flags(TARGET ${TEST_NAME})
+add_sanitizer_flags(TARGET ${TEST_NAME})
 
 include(GoogleTest)
 

@@ -6,7 +6,7 @@ namespace fink::core {
 
 class Symbol {
 public:
-    Symbol() = default;
+    Symbol(): value_() {}
 
     explicit Symbol(std::string value): value_(std::move(value)) {}
 
