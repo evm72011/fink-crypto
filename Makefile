@@ -47,12 +47,13 @@ test:
 	ctest --test-dir $(BUILD_DIR) --output-on-failure
 
 clang_tidy:
-	run-clang-tidy -p $(BUILD_DIR) -extra-arg=--gcc-toolchain=/usr -extra-arg=--driver-mode=g++
+	run-clang-tidy -p $(BUILD_DIR) -extra-arg=--gcc-toolchain=/usr -extra-arg=--driver-mode=g++ -extra-arg=-std=c++23
 
 clang_format:
 	cmake --build $(BUILD_DIR) --target run_clang_format
 
 cmake_format:
+	chmod +x tools/run-cmake-format.sh
 	cmake --build $(BUILD_DIR) --target run_cmake_format
 
 clean:
