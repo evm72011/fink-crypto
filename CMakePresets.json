@@ -1,0 +1,18 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "wsl-ninja-debug",
+      "displayName": "WSL Ninja Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/wsl",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "_CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/wsl/conan_toolchain.cmake",
+        "VENV_DIR":"${sourceDir}/.venv/wsl",
+        "ENABLE_CLANG_TIDY": "ON",
+        "ENABLE_CLANG_FORMAT": "ON"
+      }
+    }
+  ]
+}
