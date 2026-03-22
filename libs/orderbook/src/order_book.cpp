@@ -68,7 +68,7 @@ std::optional<BookTopLevel> OrderBook::best_bid() const noexcept {
 
     const auto &[price, quantity] = *bids_.begin();
 
-    return BookTopLevel{.price = fink::core::Price{price}, .quantity = quantity};
+    return BookTopLevel{ .price = fink::core::Price{ price }, .quantity = quantity };
 }
 
 std::optional<BookTopLevel> OrderBook::best_ask() const noexcept {
@@ -78,11 +78,11 @@ std::optional<BookTopLevel> OrderBook::best_ask() const noexcept {
 
     const auto &[price, quantity] = *asks_.begin();
 
-    return BookTopLevel{.price = fink::core::Price{price}, .quantity = quantity};
+    return BookTopLevel{ .price = fink::core::Price{ price }, .quantity = quantity };
 }
 
 BookTop OrderBook::top() const noexcept {
-    return BookTop{.best_bid = best_bid(), .best_ask = best_ask()};
+    return BookTop{ .best_bid = best_bid(), .best_ask = best_ask() };
 }
 
 std::optional<double> OrderBook::spread() const noexcept {

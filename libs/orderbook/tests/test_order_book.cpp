@@ -23,14 +23,16 @@ using fink::orderbook::ApplyError;
 using fink::orderbook::OrderBook;
 
 TEST(OrderBookTests, AppliesSnapshotAndCalculatesTopSpreadAndMidPrice) {
-    OrderBook book{Symbol{"BTCUSDT"}};
+    OrderBook book{ Symbol{ "BTCUSDT" } };
 
-    BookSnapshot snapshot{.symbol = Symbol{"BTCUSDT"},
-                          .timestamp = Timestamp{1},
-                          .bids = {BookLevel{.price = Price{100.0}, .quantity = Quantity{2.0}},
-                                   BookLevel{.price = Price{99.0}, .quantity = Quantity{3.0}}},
-                          .asks = {BookLevel{.price = Price{101.0}, .quantity = Quantity{1.5}},
-                                   BookLevel{.price = Price{102.0}, .quantity = Quantity{4.0}}}};
+    BookSnapshot snapshot{
+        .symbol = Symbol{ "BTCUSDT" },
+        .timestamp = Timestamp{ 1 },
+        .bids = { BookLevel{ .price = Price{ 100.0 }, .quantity = Quantity{ 2.0 } },
+                  BookLevel{ .price = Price{ 99.0 }, .quantity = Quantity{ 3.0 } } },
+        .asks = { BookLevel{ .price = Price{ 101.0 }, .quantity = Quantity{ 1.5 } },
+                  BookLevel{ .price = Price{ 102.0 }, .quantity = Quantity{ 4.0 } } }
+    };
 
     const auto result = book.apply(snapshot);
     ASSERT_TRUE(result.has_value());
@@ -55,20 +57,23 @@ TEST(OrderBookTests, AppliesSnapshotAndCalculatesTopSpreadAndMidPrice) {
 }
 
 TEST(OrderBookTests, AppliesIncrementalUpdateAndRemovesLevelWithZeroQuantity) {
-    OrderBook book{Symbol{"BTCUSDT"}};
+    OrderBook book{ Symbol{ "BTCUSDT" } };
 
-    BookSnapshot snapshot{.symbol = Symbol{"BTCUSDT"},
-                          .timestamp = Timestamp{1},
-                          .bids = {BookLevel{.price = Price{100.0}, .quantity = Quantity{2.0}}},
-                          .asks = {BookLevel{.price = Price{101.0}, .quantity = Quantity{1.0}}}};
+    BookSnapshot snapshot{
+        .symbol = Symbol{ "BTCUSDT" },
+        .timestamp = Timestamp{ 1 },
+        .bids = { BookLevel{ .price = Price{ 100.0 }, .quantity = Quantity{ 2.0 } } },
+        .asks = { BookLevel{ .price = Price{ 101.0 }, .quantity = Quantity{ 1.0 } } }
+    };
 
     ASSERT_TRUE(book.apply(snapshot).has_value());
 
-    BookUpdate update{.symbol = Symbol{"BTCUSDT"},
-                      .timestamp = Timestamp{2},
-                      .bids = {BookLevel{.price = Price{100.0}, .quantity = Quantity{0.0}},
-                               BookLevel{.price = Price{100.5}, .quantity = Quantity{1.25}}},
-                      .asks = {}};
+    BookUpdate update{ .symbol = Symbol{ "BTCUSDT" },
+                       .timestamp = Timestamp{ 2 },
+                       .bids = { BookLevel{ .price = Price{ 100.0 }, .quantity = Quantity{ 0.0 } },
+                                 BookLevel{ .price = Price{ 100.5 },
+                                            .quantity = Quantity{ 1.25 } } },
+                       .asks = {} };
 
     const auto result = book.apply(update);
     ASSERT_TRUE(result.has_value());
@@ -80,10 +85,11 @@ TEST(OrderBookTests, AppliesIncrementalUpdateAndRemovesLevelWithZeroQuantity) {
 }
 
 TEST(OrderBookTests, ReturnsSymbolMismatchForSnapshotWithDifferentSymbol) {
-    OrderBook book{Symbol{"BTCUSDT"}};
+    OrderBook book{ Symbol{ "BTCUSDT" } };
 
     BookSnapshot snapshot{
-        .symbol = Symbol{"ETHUSDT"}, .timestamp = Timestamp{1}, .bids = {}, .asks = {}};
+        .symbol = Symbol{ "ETHUSDT" }, .timestamp = Timestamp{ 1 }, .bids = {}, .asks = {}
+    };
 
     const auto result = book.apply(snapshot);
 
@@ -94,10 +100,12 @@ TEST(OrderBookTests, ReturnsSymbolMismatchForSnapshotWithDifferentSymbol) {
 TEST(OrderBookTests, EmptyOrderBookAcceptsFirstSnapshotAndSetsSymbol) {
     OrderBook book;
 
-    BookSnapshot snapshot{.symbol = Symbol{"BTCUSDT"},
-                          .timestamp = Timestamp{1},
-                          .bids = {BookLevel{.price = Price{100.0}, .quantity = Quantity{2.0}}},
-                          .asks = {BookLevel{.price = Price{101.0}, .quantity = Quantity{1.0}}}};
+    BookSnapshot snapshot{
+        .symbol = Symbol{ "BTCUSDT" },
+        .timestamp = Timestamp{ 1 },
+        .bids = { BookLevel{ .price = Price{ 100.0 }, .quantity = Quantity{ 2.0 } } },
+        .asks = { BookLevel{ .price = Price{ 101.0 }, .quantity = Quantity{ 1.0 } } }
+    };
 
     const auto result = book.apply(snapshot);
 
@@ -106,7 +114,7 @@ TEST(OrderBookTests, EmptyOrderBookAcceptsFirstSnapshotAndSetsSymbol) {
 }
 
 TEST(OrderBookTests, ReturnsEmptyOptionalsWhenBookHasNoTopLevels) {
-    OrderBook book{Symbol{"BTCUSDT"}};
+    OrderBook book{ Symbol{ "BTCUSDT" } };
 
     EXPECT_FALSE(book.best_bid().has_value());
     EXPECT_FALSE(book.best_ask().has_value());
