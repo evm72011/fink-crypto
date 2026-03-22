@@ -45,3 +45,15 @@ run: build
 
 test:
 	ctest --test-dir $(BUILD_DIR) --output-on-failure
+
+clang_tidy:
+	run-clang-tidy -p $(BUILD_DIR) -extra-arg=--gcc-toolchain=/usr -extra-arg=--driver-mode=g++
+
+clang_format:
+	cmake --build $(BUILD_DIR) --target run_clang_format
+
+cmake_format:
+	cmake --build $(BUILD_DIR) --target run_cmake_format
+
+clean:
+	rm -rf $(BUILD_DIR)
