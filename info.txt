@@ -1,0 +1,145 @@
+fink-crypto/
+├─ CMakeLists.txt
+├─ CMakePresets.json
+├─ conanfile.py
+├─ README.md
+├─ .gitignore
+├─ docs/
+│  ├─ architecture/
+│  ├─ decisions/
+│  └─ exchange-notes/
+├─ configs/
+│  ├─ app.dev.yaml
+│  ├─ app.paper.yaml
+│  ├─ app.live.yaml
+│  └─ exchanges/
+│     ├─ binance.yaml
+│     └─ bybit.yaml
+├─ scripts/
+│  ├─ run_dev.sh
+│  ├─ format.sh
+│  └─ lint.sh
+├─ third_party/
+├─ libs/
+│  ├─ core/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/core/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ utils/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/utils/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ config/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/config/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ logging/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/logging/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ net/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/net/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ json/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/json/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ time/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/time/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ market/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/market/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ orderbook/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/orderbook/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ exchange/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/exchange/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ exchange_binance/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/exchange/binance/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ exchange_bybit/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/exchange/bybit/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ execution/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/execution/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ portfolio/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/portfolio/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ risk/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/risk/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ strategy/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/strategy/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ storage/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/storage/
+│  │  ├─ src/
+│  │  └─ tests/
+│  ├─ replay/
+│  │  ├─ CMakeLists.txt
+│  │  ├─ include/fink/replay/
+│  │  ├─ src/
+│  │  └─ tests/
+│  └─ backtest/
+│     ├─ CMakeLists.txt
+│     ├─ include/fink/backtest/
+│     ├─ src/
+│     └─ tests/
+├─ apps/
+│  ├─ market_data_recorder/
+│  │  ├─ CMakeLists.txt
+│  │  └─ src/main.cpp
+│  ├─ orderbook_viewer/
+│  │  ├─ CMakeLists.txt
+│  │  └─ src/main.cpp
+│  ├─ paper_trader/
+│  │  ├─ CMakeLists.txt
+│  │  └─ src/main.cpp
+│  ├─ live_trader/
+│  │  ├─ CMakeLists.txt
+│  │  └─ src/main.cpp
+│  ├─ backtest_runner/
+│  │  ├─ CMakeLists.txt
+│  │  └─ src/main.cpp
+│  └─ sandbox/
+│     ├─ CMakeLists.txt
+│     └─ src/main.cpp
+├─ tests/
+│  ├─ integration/
+│  ├─ e2e/
+│  └─ test_data/
+└─ data/
+   ├─ raw/
+   ├─ normalized/
+   └─ replay/
