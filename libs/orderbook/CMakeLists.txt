@@ -2,10 +2,9 @@ set(LIB_NAME ${ORDER_BOOK_LIB_NAME})
 
 add_library(${LIB_NAME} src/order_book.cpp)
 
-target_include_directories(${LIB_NAME}
-                           PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
+target_include_directories(${LIB_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
 
-target_link_libraries(${LIB_NAME} PUBLIC ${CORE_LIB_NAME} ${MARKET_LIB_NAME})         
+target_link_libraries(${LIB_NAME} PUBLIC ${CORE_LIB_NAME} ${MARKET_LIB_NAME})
 
 target_set_warnings(
     TARGET
@@ -28,7 +27,7 @@ add_clang_tidy(
     ${LIB_NAME}
     ENABLE
     ${ENABLE_CLANG_TIDY})
-    
+
 if(ENABLE_TESTING)
     add_subdirectory(tests)
 endif()

@@ -26,4 +26,3 @@ add_clang_tidy(
     ${LIB_NAME}
     ENABLE
     ${ENABLE_CLANG_TIDY})
-                               
