@@ -2,21 +2,21 @@
 
 #include "fink/core/price.hpp"
 #include "fink/core/quantity.hpp"
-#include "fink/core/timestamp.hpp"
 #include "fink/core/symbol.hpp"
+#include "fink/core/timestamp.hpp"
 
 namespace fink::core {
 
 struct Quote {
-    Symbol symbol;
+  Symbol symbol;
 
-    Price bid_price;
-    Quantity bid_quantity;
+  Price bid_price;
+  Quantity bid_quantity;
 
-    Price ask_price;
-    Quantity ask_quantity;
+  Price ask_price;
+  Quantity ask_quantity;
 
-    Timestamp timestamp;
+  Timestamp timestamp;
 };
 
-}
+} // namespace fink::core

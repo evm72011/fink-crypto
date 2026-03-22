@@ -2,8 +2,6 @@
 
 namespace fink::orderbook {
 
-enum class ApplyError {
-    SymbolMismatch
-};
+enum class ApplyError { SymbolMismatch };
 
 } // namespace fink::orderbook

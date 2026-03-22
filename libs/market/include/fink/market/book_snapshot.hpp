@@ -9,11 +9,11 @@
 namespace fink::market {
 
 struct BookSnapshot {
-    fink::core::Symbol symbol;
-    fink::core::Timestamp timestamp;
+  fink::core::Symbol symbol;
+  fink::core::Timestamp timestamp;
 
-    std::vector<BookLevel> bids;
-    std::vector<BookLevel> asks;
+  std::vector<BookLevel> bids;
+  std::vector<BookLevel> asks;
 };
 
 } // namespace fink::market

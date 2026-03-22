@@ -2,9 +2,6 @@
 
 namespace fink::core {
 
-enum class Side {
-    Buy,
-    Sell
-};
+enum class Side { Buy, Sell };
 
 }

@@ -2,9 +2,6 @@
 
 namespace fink::market {
 
-enum class BookSide {
-    Bid,
-    Ask
-};
+enum class BookSide { Bid, Ask };
 
 } // namespace fink::market
