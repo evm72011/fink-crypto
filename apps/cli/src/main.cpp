@@ -2,5 +2,5 @@
 
 int main()
 {
-    std::cout << "fink-crypto-cli\n";
+    std::cout << "Hello, fink-crypto-cli\n";
 }

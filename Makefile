@@ -1,6 +1,10 @@
 BUILD_DIR  := build/wsl
 BUILD_TYPE := Debug # Release
 
+VENV_DIR   := .venv/wsl
+PYTHON     := $(VENV_DIR)/bin/python
+CONAN      := $(VENV_DIR)/bin/conan
+
 WSL_CONFIGURE_PRESET := wsl-ninja-$(shell echo $(BUILD_TYPE) | tr A-Z a-z)
 
 RED   := \033[31m
@@ -32,4 +36,9 @@ build:
 	fi; \
 	printf "$(GREEN)Build OK$(RESET)\n"
 
-run: build fink-crypto-cli
+run: build
+	@./$(BUILD_DIR)/apps/cli/fink-crypto-cli; rc=$$?; \
+	  printf "$(GRAY)■$(RESET)\n"; \
+	  if [ $$rc -ne 0 ]; then printf "$(RED)ExitCode=$$rc$(RESET)\n"; \
+	  else printf "$(GRAY)ExitCode=$$rc$(RESET)\n"; fi; \
+	  exit $$rc
