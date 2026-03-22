@@ -7,9 +7,12 @@ namespace fink::core {
 class Price {
 public:
     constexpr Price() = default;
-    explicit constexpr Price(double v) noexcept : value_(v) {}
+    explicit constexpr Price(double v) noexcept : value_(v) {
+    }
 
-    [[nodiscard]] constexpr double value() const noexcept { return value_; }
+    [[nodiscard]] constexpr double value() const noexcept {
+        return value_;
+    }
 
 private:
     double value_ = 0.0;

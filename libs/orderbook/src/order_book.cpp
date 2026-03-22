@@ -5,7 +5,8 @@
 
 namespace fink::orderbook {
 
-OrderBook::OrderBook(fink::core::Symbol symbol) : symbol_(std::move(symbol)), bids_(), asks_() {}
+OrderBook::OrderBook(fink::core::Symbol symbol) : symbol_(std::move(symbol)), bids_(), asks_() {
+}
 
 std::expected<void, ApplyError> OrderBook::apply(const fink::market::BookSnapshot &snapshot) {
     if (!symbol_is_compatible(snapshot.symbol)) {
@@ -44,13 +45,21 @@ std::expected<void, ApplyError> OrderBook::apply(const fink::market::BookUpdate 
     return {};
 }
 
-const fink::core::Symbol &OrderBook::symbol() const noexcept { return symbol_; }
+const fink::core::Symbol &OrderBook::symbol() const noexcept {
+    return symbol_;
+}
 
-bool OrderBook::empty() const noexcept { return bids_.empty() && asks_.empty(); }
+bool OrderBook::empty() const noexcept {
+    return bids_.empty() && asks_.empty();
+}
 
-bool OrderBook::has_bids() const noexcept { return !bids_.empty(); }
+bool OrderBook::has_bids() const noexcept {
+    return !bids_.empty();
+}
 
-bool OrderBook::has_asks() const noexcept { return !asks_.empty(); }
+bool OrderBook::has_asks() const noexcept {
+    return !asks_.empty();
+}
 
 std::optional<BookTopLevel> OrderBook::best_bid() const noexcept {
     if (bids_.empty()) {
