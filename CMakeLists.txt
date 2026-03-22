@@ -12,6 +12,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CORE_LIB_NAME "fink-crypto-core")
 set(MARKET_LIB_NAME "fink-crypto-market")
+set(ORDER_BOOK_LIB_NAME "fink-crypto-orderbook")
 
 add_subdirectory(libs)
 add_subdirectory(apps)
