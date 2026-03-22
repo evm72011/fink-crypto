@@ -8,15 +8,15 @@
 namespace fink::core {
 
 struct Quote {
-  Symbol symbol;
+    Symbol symbol;
 
-  Price bid_price;
-  Quantity bid_quantity;
+    Price bid_price;
+    Quantity bid_quantity;
 
-  Price ask_price;
-  Quantity ask_quantity;
+    Price ask_price;
+    Quantity ask_quantity;
 
-  Timestamp timestamp;
+    Timestamp timestamp;
 };
 
 } // namespace fink::core

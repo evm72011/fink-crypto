@@ -6,8 +6,8 @@
 namespace fink::market {
 
 struct BookLevel {
-  fink::core::Price price;
-  fink::core::Quantity quantity;
+    fink::core::Price price;
+    fink::core::Quantity quantity;
 };
 
 } // namespace fink::market

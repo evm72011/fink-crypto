@@ -9,11 +9,11 @@
 namespace fink::market {
 
 struct TradeTick {
-  fink::core::Symbol symbol;
-  fink::core::Price price;
-  fink::core::Quantity quantity;
-  fink::core::Side side;
-  fink::core::Timestamp timestamp;
+    fink::core::Symbol symbol;
+    fink::core::Price price;
+    fink::core::Quantity quantity;
+    fink::core::Side side;
+    fink::core::Timestamp timestamp;
 };
 
 } // namespace fink::market

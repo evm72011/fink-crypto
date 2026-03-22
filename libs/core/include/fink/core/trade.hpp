@@ -9,11 +9,11 @@
 namespace fink::core {
 
 struct Trade {
-  Symbol symbol;
-  Price price;
-  Quantity quantity;
-  Side side;
-  Timestamp timestamp;
+    Symbol symbol;
+    Price price;
+    Quantity quantity;
+    Side side;
+    Timestamp timestamp;
 };
 
 } // namespace fink::core
