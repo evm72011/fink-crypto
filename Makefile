@@ -42,3 +42,6 @@ run: build
 	  if [ $$rc -ne 0 ]; then printf "$(RED)ExitCode=$$rc$(RESET)\n"; \
 	  else printf "$(GRAY)ExitCode=$$rc$(RESET)\n"; fi; \
 	  exit $$rc
+
+test:
+	ctest --test-dir $(BUILD_DIR) --output-on-failure
