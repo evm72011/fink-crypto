@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fink/core/symbol.hpp>
+#include <fink/market/book_snapshot.hpp>
+
+#include <cassert>
+
+int main()
+{
+    std::cout << "Hello, fink-crypto-example\n";
+
+    fink::market::BookSnapshot snapshot{
+        .symbol = fink::core::Symbol{"BTCUSDT"},
+        .timestamp = fink::core::Timestamp{123456789},
+        .bids = {},
+        .asks = {}
+    };
+
+    assert(snapshot.bids.empty());
+    assert(snapshot.asks.empty());
+}

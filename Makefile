@@ -37,7 +37,7 @@ build:
 	printf "$(GREEN)Build OK$(RESET)\n"
 
 run: build
-	@./$(BUILD_DIR)/apps/cli/fink-crypto-cli; rc=$$?; \
+	@./$(BUILD_DIR)/apps/example/fink-crypto-example; rc=$$?; \
 	  printf "$(GRAY)■$(RESET)\n"; \
 	  if [ $$rc -ne 0 ]; then printf "$(RED)ExitCode=$$rc$(RESET)\n"; \
 	  else printf "$(GRAY)ExitCode=$$rc$(RESET)\n"; fi; \

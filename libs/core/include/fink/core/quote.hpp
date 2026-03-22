@@ -1,9 +1,9 @@
 #pragma once
 
-#include "price.hpp"
-#include "quantity.hpp"
-#include "timestamp.hpp"
-#include "symbol.hpp"
+#include "fink/core/price.hpp"
+#include "fink/core/quantity.hpp"
+#include "fink/core/timestamp.hpp"
+#include "fink/core/symbol.hpp"
 
 namespace fink::core {
 
