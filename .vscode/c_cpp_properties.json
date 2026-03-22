@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "wsl-gcc-x64",
+      "compileCommands": "${workspaceFolder}/build/wsl/compile_commands.json",
+      "compilerPath": "/usr/bin/g++",
+      "intelliSenseMode": "linux-gcc-x64",
+      "cppStandard": "c++23",
+      "cStandard": "c17",
+      "includePath": ["${workspaceFolder}/**"]
+    }
+  ],
+  "version": 4
+}
